@@ -1,0 +1,126 @@
+parsers: # array
+  - reg: ^https://fast.lycorisrecoil.org/.+$ # 正则匹配域名
+    yaml:
+      mix-rule-providers:
+        LocalAreaNetwork:
+          behavior: classical # domain, ipcidr or classical (premium core only)
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml"
+          interval: 86400
+          path: ./ACL4SSR/LocalAreaNetwork.yaml
+        UnBan:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml"
+          interval: 86400
+          path: ./ACL4SSR/UnBan.yaml
+        BanAD:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml"
+          interval: 86400
+          path: ./ACL4SSR/BanAD.yaml
+        BanProgramAD:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml"
+          interval: 86400
+          path: ./ACL4SSR/BanProgramAD.yaml
+        GoogleFCM:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml"
+          interval: 86400
+          path: ./ACL4SSR/GoogleFCM.yaml
+        GoogleCN:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml"
+          interval: 86400
+          path: ./ACL4SSR/GoogleCN.yaml
+        SteamCN:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml"
+          interval: 86400
+          path: ./ACL4SSR/SteamCN.yaml
+        Microsoft:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+          interval: 86400
+          path: ./ACL4SSR/Microsoft.yaml
+        Apple:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml"
+          interval: 86400
+          path: ./ACL4SSR/Apple.yaml
+        Telegram:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml"
+          interval: 86400
+          path: ./ACL4SSR/Telegram.yaml
+        ProxyLite:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyLite.yaml"
+          interval: 86400
+          path: ./ACL4SSR/ProxyLite.yaml
+        ProxyMedia:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml"
+          interval: 86400
+          path: ./ACL4SSR/ProxyMedia.yaml
+        ChinaDomain:
+          behavior: classical 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml"
+          interval: 86400
+          path: ./ACL4SSR/ChinaDomain.yaml
+        ChinaCompanyIp:
+          behavior: ipcidr 
+          type: http
+          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
+          interval: 86400
+          path: ./ACL4SSR/ChinaCompanyIp.yaml
+
+      prepend-rules:
+        - DOMAIN-SUFFIX,steamcommunity.com,🔰国外流量
+        - DOMAIN-SUFFIX,steampowered.com,🔰国外流量
+        - DOMAIN-SUFFIX,cdn.steamstatic.com,DIRECT
+        - DOMAIN-SUFFIX,steamstatic.com,🔰国外流量
+        - DOMAIN-SUFFIX,steamstore-a.akamaihd.net,DIRECT
+        - DOMAIN-SUFFIX,steamcontent.com,DIRECT
+        - DOMAIN-SUFFIX,steamserver.net,DIRECT
+
+        - RULE-SET,UnBan,DIRECT
+        - RULE-SET,BanAD,REJECT
+        - RULE-SET,BanProgramAD,DIRECT
+        - RULE-SET,GoogleFCM,🔰国外流量
+        - RULE-SET,GoogleCN,DIRECT
+        - RULE-SET,SteamCN,DIRECT
+        - RULE-SET,Microsoft,DIRECT
+        - RULE-SET,Apple,DIRECT
+        - RULE-SET,Telegram,🔰国外流量
+        - RULE-SET,ProxyLite,🔰国外流量
+        - RULE-SET,ProxyMedia,🔰国外流量
+        - RULE-SET,ChinaDomain,DIRECT
+        - RULE-SET,ChinaCompanyIp,DIRECT
+        
+        - DOMAIN-SUFFIX,download.epicgames.com,DIRECT
+        - DOMAIN-SUFFIX,download2.epicgames.com,DIRECT
+        - DOMAIN-SUFFIX,download3.epicgames.com,DIRECT
+        - DOMAIN-SUFFIX,download4.epicgames.com,DIRECT
+        - DOMAIN-SUFFIX,fastly-download.epicgames.com,DIRECT
+        - DOMAIN-SUFFIX,epicgames-download1.akamaized.net,DIRECT
+        - DOMAIN-SUFFIX,epicgames.com,DIRECT
+        - DOMAIN-SUFFIX,unrealengine.com,DIRECT
+        - DOMAIN-SUFFIX,api.epicgames.dev,DIRECT
+        - DOMAIN-SUFFIX,chatgpt.com,🔰国外流量
+        - DOMAIN-SUFFIX,openai.com,🔰国外流量
+        - DOMAIN-SUFFIX,rsshub.app,🔰国外流量
+
+        - DOMAIN-KEYWORD,creaders,🔰国外流量
