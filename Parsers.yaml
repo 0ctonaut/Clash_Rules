@@ -88,14 +88,6 @@ parsers: # array
           path: ./ACL4SSR/ChinaCompanyIp.yaml
 
       prepend-rules:
-        - DOMAIN-SUFFIX,steamcommunity.com,🔰国外流量
-        - DOMAIN-SUFFIX,steampowered.com,🔰国外流量
-        - DOMAIN-SUFFIX,cdn.steamstatic.com,DIRECT
-        - DOMAIN-SUFFIX,steamstatic.com,🔰国外流量
-        - DOMAIN-SUFFIX,steamstore-a.akamaihd.net,DIRECT
-        - DOMAIN-SUFFIX,steamcontent.com,DIRECT
-        - DOMAIN-SUFFIX,steamserver.net,DIRECT
-
         - RULE-SET,UnBan,DIRECT
         - RULE-SET,BanAD,REJECT
         - RULE-SET,BanProgramAD,DIRECT
