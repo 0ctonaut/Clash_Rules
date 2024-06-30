@@ -41,7 +41,7 @@ parsers: # array
         SteamCN:
           behavior: classical 
           type: http
-          url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml"
+          url: "https://raw.githubusercontent.com/0ctonaut/Clash_Rules/main/SteamCN.yaml"
           interval: 86400
           path: ./ACL4SSR/SteamCN.yaml
         Microsoft:
